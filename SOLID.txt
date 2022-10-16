@@ -1,0 +1,72 @@
+1. Single Responibility Principle -- Each class/Method should be responsible to do only one task
+Single Responsiblity to a single function
+2. Open-Closed Principle -- Class should open for extention and closed for modification
+3. Liskov Substitution Principle -- The Liskov Substitution Principle states that subclasses
+should be substitutable for their base classes.
+==This means that, given that class B is a subclass of class A, we should be able to pass an 
+object of class B to any method that expects an object of class A
+
+class Rectangle {
+	protected int width, height;
+
+	public Rectangle() {
+	}
+
+	public Rectangle(int width, int height) {
+		this.width = width;
+		this.height = height;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public int getArea() {
+		return width * height;
+	}
+}
+We have a simple Rectangle class, and a getArea function which returns the area of the rectangle.
+
+Now we decide to create another class for Squares. As you might know, a square is just a special type of rectangle where the width is equal to the height.
+
+class Square extends Rectangle {
+	public Square() {}
+
+	public Square(int size) {
+		width = height = size;
+	}
+
+	@Override
+	public void setWidth(int width) {
+		super.setWidth(width);
+		super.setHeight(width);
+	}
+
+	@Override
+	public void setHeight(int height) {
+		super.setHeight(height);
+		super.setWidth(height);
+	}
+}
+Our Square class extends the Rectangle class. We set height and width to the same value in the constructor, but we do not want any client (someone who uses our class in their code) to change height or weight in a way that can violate the square property.
+
+Therefore we override the setters to set both properties whenever one of them is changed. But by doing that we have just violated the Liskov substitution principle.
+
+4.Interface Segregation Principle -- Always segregate yor interfaces according to your
+needs.
+5. Dependency Inversion Princile -- The Dependency Inversion principle states that our classes should depend upon interfaces or abstract classes
+ instead of concrete classes and functions.
+ = segregate interfaces
+ == use Abstract classes and inherit them
