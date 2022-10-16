@@ -1,0 +1,22 @@
+Write a Java program that can accept an integer number as an input from user and prints if the given number is even or not.
+
+Print "Even" if the number is even, "Odd" if the number is odd.
+
+import java.util.Scanner;
+
+public class Main {
+
+  public static void main(String args[]) {
+    // Write your code here...
+    Scanner scan = new Scanner(System.in);
+
+    int num = scan.nextInt();
+
+    if(num % 2 == 0) {
+        System.out.println("Even");
+    } else {
+        System.out.println("Odd");
+    }
+
+  }
+}

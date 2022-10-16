@@ -1,0 +1,40 @@
+Write a Java program that accepts a char input and displays true if the given char is a vovel else false.
+
+Note: Check for both uppercase and lowercase char.
+
+List of vovels: 'a', 'e', 'i', 'o', 'u'
+Example
+
+Input: 'a'
+Output: true
+Input: 'b'
+Output: false
+Input: 'A'
+Output: true
+Input: 'O'
+Output: true
+Input: 'u'
+Output: true
+
+==========
+import java.util.Scanner;
+
+
+public class Main {
+
+  public static void main(String args[]) {
+    // Write your code here...
+    Scanner scanner = new Scanner(System.in);
+
+    char ch = scanner.next().charAt(0);
+
+    if(ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') { //  Check for uppercase
+        System.out.println(true);
+    }
+    else if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') { //  Check for lowercase
+        System.out.println(true);
+    } else {
+        System.out.println(false);
+    }
+  }
+}

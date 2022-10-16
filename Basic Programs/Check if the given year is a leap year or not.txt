@@ -1,0 +1,43 @@
+Write a Java program to check if the given year is a leap year or not. Take the input from user as integer. Output true if the given year is leap year, else output false on the terminal.
+
+import java.util.Scanner;
+
+public class Main {
+
+  public static void main(String args[]) {
+    // Write your code here...
+    Scanner scanner = new Scanner(System.in);
+
+    int year = scanner.nextInt();
+    boolean leap = false;
+
+    // if the year is divided by 4
+    if (year % 4 == 0) {
+
+        // if the year is century
+        if (year % 100 == 0) {
+
+            // if year is divided by 400
+            // then it is a leap year
+            if (year % 400 == 0) {
+                leap = true;
+            }
+            else {
+                leap = false;
+            }
+        }
+
+        // if the year is not century
+        else {
+            leap = true;
+        }
+            
+    }
+    else {
+        leap = false;
+    }
+
+    System.out.println(leap);
+        
+  }
+}

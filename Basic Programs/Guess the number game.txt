@@ -1,0 +1,5 @@
+Build a simple guess the number game as discussed the video tutorial in the starting of this section.
+
+As this is a completely random game, there are no test cases for the same possible.
+
+You have to solve it from own.
