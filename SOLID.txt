@@ -70,3 +70,5 @@ needs.
  instead of concrete classes and functions.
  = segregate interfaces
  == use Abstract classes and inherit them
+
+https://www.freecodecamp.org/news/solid-principles-explained-in-plain-english/
